@@ -105,15 +105,15 @@
         const progessbar = document.querySelector('.progess-bar')
         const btn3 = document.querySelector('.btn-3')
 
-        const getimg = document.querySelectorAll('.img-wapper img')
-        const height = (a) => {
-            let b = (3.3 / 768) * a
-            return (Number(b).toFixed(2));
-        }
+    //    const getimg = document.querySelectorAll('.img-wapper img')
+     //   const height = (a) => {
+     //       let b = (3.3 / 768) * a
+      //      return b;
+      //  }
 
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset + window.innerHeight >= section1.offsetTop + section1.offsetHeight * height(window.screen.height)) {
-                console.log("scrolled");
+            if (window.scrollY >= 610) {
+               // console.log("scrolled");
                 navbar.classList.add('fixed')
 
             }
