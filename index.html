@@ -110,9 +110,9 @@
      //       let b = (3.3 / 768) * a
       //      return b;
       //  }
-
+const navbaroffset=navbar.offsetTop;
         window.addEventListener('scroll', () => {
-            if (window.scrollY >= 610) {
+            if (window.pageYOffset >= navbaroffset) {
                // console.log("scrolled");
                 navbar.classList.add('fixed')
 
