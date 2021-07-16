@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
+/*common css*/
+
+:root {
+    --color: rgb(235, 44, 187);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    ;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.height-width {
+    height: 100vh;
+    width: 100%;
+}
+
+.max-content {
+    height: max-content;
+    width: max-content;
+}
+
+.section-heading {
+    font-size: 7rem;
+    text-underline-position: below;
+    text-decoration-color: black;
+    flex-direction: column;
+    margin: 6rem 0;
+    /* background-color: violet;*/
+}
+
+.section-heading div {
+    width: 100%;
+    height: 3px;
+    background-color: black;
+}
+
+/*end of common css*/
+
+/*section-1*/
+
+.section-1 {
+    background-image: url("/images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    object-fit: cover;
+    flex-direction: column;
+}
+
+.section-1-heading {
+    font-size: 5rem;
+    margin: 4rem 0;
+    padding: 1rem;
+    font-weight: 800;
+    color: white;
+    background-color: rgb(235, 44, 187);
+    transform: skew(-10deg);
+    box-shadow: 0rem 4px 0rem white;
+}
+
+.section-1-cont {
+    /*background-color: tomato;*/
+    flex-direction: column;
+}
+
+.section-1-cont img {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    background-color: rgb(216, 212, 212);
+    padding: .2rem;
+    border: 5px dotted rgb(235, 44, 187);
+    outline: 2px solid rgb(216, 212, 212);
+}
+
+.cont-name {
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+    background-color: rgb(235, 44, 187);
+    margin: 3rem 0;
+    transform: skew(-10deg);
+    padding: .5rem .5rem;
+}
+
+.section-1-cont a {
+    color: rgb(235, 44, 187);
+    font-weight: 500;
+    font-size: 2rem;
+    background-color: white;
+    border: 2px solid rgb(235, 44, 187);
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+    text-transform: uppercase;
+}
+
+.section-1-cont a:hover {
+    background-color: rgb(235, 44, 187);
+    color: white;
+    border: 2px solid white;
+    transition: all .3s ease-in-out;
+}
+
+/*end of section-1*/
+
+/*navbar*/
+
+.navbar {
+    width: 100%;
+    height: 5rem;
+    background-color: rgb(235, 44, 187);
+    position: relative;
+    z-index: 100;
+}
+
+.fixed.navbar {
+    position: fixed;
+    top: 0%;
+}
+
+.nav-link {
+    font-size: 2rem;
+    margin: 0 2rem;
+    font-weight: 500;
+    color: white;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+}
+
+.scroll-div {
+    background-color: violet;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    left: 36%;
+    width: 6%;
+    opacity: 1;
+    transition: all .5s ease;
+}
+
+.move.scroll-div {
+    width: 7%;
+    left: 44%;
+    transition: all .5s ease;
+}
+
+.move2.scroll-div {
+    width: 10%;
+    left: 53.5%;
+    transition: all .5s ease;
+}
+
+/*end of navbar*/
+
+/*section-2*/
+
+.section-2 {
+    height: 100%;
+    padding: 5rem 0;
+    flex-direction: column;
+    /* background-color: tomato;*/
+    justify-content: space-evenly;
+}
+
+.progess-bar {
+    /*background-color: whitesmoke;*/
+    flex-direction: column;
+    margin-bottom: 5rem;
+}
+
+.bars {
+    width: 50rem;
+    height: 4rem;
+    background-color: rgb(158, 157, 157);
+    margin: 1rem 0;
+    font-size: 2rem;
+    padding: .5rem 0 0 .5rem;
+    color: white;
+    font-weight: 900;
+    border-radius: .5rem;
+    z-index: 1;
+    position: relative;
+}
+
+.bars::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 0;
+    background-color: rgb(235, 44, 187);
+    top: 0;
+    left: 0;
+    border-radius: .5rem;
+    z-index: -1;
+    opacity: 0;
+    transition: all .4s ease;
+}
+
+.scroll>.bar-1::before {
+    width: 97%;
+    opacity: 1;
+    transition: all .4s ease;
+}
+
+.scroll>.bar-2::before {
+    width: 85%;
+    opacity: 1;
+    transition: all .4s ease;
+}
+
+.scroll>.bar-3::before {
+    width: 55%;
+    opacity: 1;
+    transition: all .4s ease;
+}
+
+.scroll>.bar-4::before {
+    width: 77%;
+    opacity: 1;
+    transition: all .4s ease;
+}
+
+.icons {
+    margin: 5rem 0;
+    width: 80%;
+    /* background-color: #ffff00;*/
+    height: 20rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon:nth-child(1) {
+    align-self: flex-start;
+}
+
+.icon:nth-child(2) {
+    align-self: flex-end;
+}
+
+.icon:nth-child(3) {
+    align-self: flex-end;
+}
+
+.icon:nth-child(4) {
+    align-self: flex-start;
+}
+
+.icon:nth-child(2) i {
+    transform: translateX(27%);
+}
+
+.icon i {
+    font-size: 8rem;
+    color: rgb(99, 93, 93);
+}
+
+.icon h3 {
+    background-color: rgb(99, 93, 93);
+    padding: .3rem .4rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+    transform: skew(-10deg);
+    margin: 2rem 0;
+}
+
+/* end of section-2*/
+
+/*section-3*/
+
+.section-3 {
+    height: 100%;
+    background-color: violet;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 10rem 5rem 10rem;
+}
+
+.img-wapper {
+    flex-wrap: wrap;
+    position: relative;
+   /* background-color: brown;*/
+    width: 81rem;
+}
+
+.img-wapper img {
+    margin: 1rem 1rem;
+    width: 25rem;
+}
+
+.filter{
+    filter: blur(.4rem);
+}
+
+.img-wapper img:hover{
+  filter: blur(.4rem);
+}
+
+.btn-3 {
+    top: 10%;
+    left: 17%;
+    position: absolute;
+    font-size: 2rem;
+    padding: .5rem;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 1rem;
+    opacity: 0;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+
+ 
+
+
+
+/*end of section-3*/

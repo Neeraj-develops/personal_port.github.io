@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <title>Personal portfolio_project</title>
+</head>
+
+<body>
+    <div class="cotainer">
+        <!--section-1-->
+        <section class="section-1 height-width flex-center">
+            <div class="section-1-heading">Web Developer</div>
+            <div class="section-1-cont max-content flex-center">
+                <img src="images/john-smith.jpg">
+                <h1 class="cont-name">John Smith</h1>
+                <a href="#">projects</a>
+            </div>
+        </section>
+        <!--end of section-1-->
+        <!--navbar-->
+        <nav class="navbar flex-center">
+            <div class="links">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="nav-link">Portfolio</a>
+
+            </div>
+            <div class="scroll-div"></div>
+        </nav>
+        <!--end of navbar-->
+        <!--section-2-->
+        <section class="section-2 height-width flex-center">
+            <div class="section-heading flex-center">About Me <div></div>
+            </div>
+
+            <div class="progess-bar max-content flex-center">
+                <div class="bars bar-1">HTML 97%</div>
+                <div class="bars bar-2">CSS 85%</div>
+                <div class="bars bar-3">JAVASCRIPT 57%</div>
+                <div class="bars bar-4">REACTJS 77%</div>
+            </div>
+
+            <div class="icons flex-center">
+                <div class="icon max-content">
+                    <i class="far fa-lightbulb"></i>
+                    <h3 class="icon-text">Creative</h3>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-cut"></i>
+                    <h3 class="icon-text">Problem Solving</h3>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3 class="icon-text">Fast</h3>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-rocket"></i>
+                    <h3 class="icon-text">Dynamic</h3>
+                </div>
+            </div>
+        </section>
+        <!--end of section-2-->
+        <!--section-3-->
+        <section class="section-3 height-width flex-center">
+            <div class="section-heading">Portfolio <div></div>
+            </div>
+            <div class="img-wapper flex-center max-content">
+
+                <img src="images/project-1.jpg">
+                <img src="images/project-2.jpg">
+                <img src="images/project-3.jpg">
+                <img src="images/project-4.jpg">
+                <img src="images/project-5.jpg">
+                <img src="images/project-6.jpg">
+                <img src="images/project-7.jpg">
+                <img src="images/project-8.jpg">
+                <img src="images/project-9.jpg">
+
+                <div class="btn-3 ">Watch Video</div>
+            </div>
+        </section>
+        <!--end of section-3-->
+    </div>
+
+
+
+
+
+
+
+    <script>
+        const section1 = document.querySelector('.section-1-cont')
+        const section2 = document.querySelector('.section-2')
+        const section3 = document.querySelector('.section-3')
+        const scrolldiv = document.querySelector('.scroll-div')
+        const navbar = document.querySelector('.navbar')
+        const progessbar = document.querySelector('.progess-bar')
+        const btn3 = document.querySelector('.btn-3')
+
+        const getimg = document.querySelectorAll('.img-wapper img')
+        const height = (a) => {
+            let b = (3.3 / 768) * a
+            return (Number(b).toFixed(2));
+        }
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset + window.innerHeight >= section1.offsetTop + section1.offsetHeight * height(window.screen.height)) {
+                console.log("scrolled");
+                navbar.classList.add('fixed')
+
+            }
+            else {
+                navbar.classList.remove('fixed')
+
+
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset + window.innerHeight >= section2.offsetTop + section2.offsetHeight / 3) {
+
+
+                scrolldiv.classList.add('move');
+                progessbar.classList.add('scroll')
+            }
+            else {
+                progessbar.classList.remove('scroll')
+                scrolldiv.classList.remove('move');
+
+            }
+        });
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset + window.innerHeight >= section3.offsetTop + section3.offsetHeight / 1.5) {
+                scrolldiv.classList.add('move2');
+
+            } else {
+                scrolldiv.classList.remove('move2');
+            }
+        });
+
+
+
+        //images hover effect
+        const move = (e) => {
+            console.log(e);
+            btn3.style.top = e.offsetTop + 50 + "px"
+            btn3.style.left = e.offsetLeft + 50 + "px"
+            btn3.style.opacity = 1;
+
+
+        }
+
+        btn3.addEventListener('mouseover', () => {
+            btn3.style.opacity = 1;
+        })
+        btn3.addEventListener('mouseout', () => {
+            btn3.style.opacity = 1;
+            
+        })
+
+
+        getimg.forEach((ele) => {
+            ele.addEventListener('mouseover', (e) => {
+                move(e.target);
+            })
+            ele.addEventListener('mouseout', () => {
+
+                btn3.style.opacity = 0;
+            })
+        })
+
+        console.log(window.screen.width);
+        console.log(window.screen.height)
+
+    </script>
+</body>
+
+</html>
